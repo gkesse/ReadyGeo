@@ -24,6 +24,6 @@ Le développement de la bibliothèque **ReadyGeo** a nécessité les technologies su
 * Outil de Construction : **NMake, Cygwin**
 * Editeur de Texte : **Notepad++**
 * Concept Vecteur : **Longueur, Normal, Orthogonal**
-* Concept Droite : **Equation, Intersection**
-* Concept Cercle : **Equation, Intersection**
+* Figure Géométrique : **Droite, Cercle, Polygone**
+* Concept Géométrie 2D/3D : **Equation, Intersection**
 * Cible : **Windows, UNIX**
