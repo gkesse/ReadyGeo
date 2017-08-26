@@ -1,35 +1,40 @@
 //===============================================
-#ifndef _GVec2D_
-#define _GVec2D_
+#ifndef _GVec_
+#define _GVec_
 //===============================================
 #include <iostream>
 //===============================================
 using namespace std;
 //===============================================
-class GVec2D {
+class GVec {
 public:
-    GVec2D();
-    GVec2D(const GVec2D& vec);
-    GVec2D(const double& x, const double& y);
-    ~GVec2D();
+    GVec(const bool& is3D = false);
+    GVec(const GVec& vec);
+    GVec(const double& x, const double& y);
+    GVec(const double& x, const double& y, const double& z);
+    ~GVec();
 
 public:
     double getX() const;
     double getY() const;
+    double getZ() const;
     void setX(const double& x);
     void setY(const double& y);
+    void setZ(const double& z);
 
 public:
     double length() const;
-    GVec2D normalize() const;
+    GVec normalize() const;
     
 public:
-    friend ostream& operator<<(ostream& s, const GVec2D& vec); 
-    friend GVec2D operator/(const GVec2D& vec, const double& d);
+    friend ostream& operator<<(ostream& s, const GVec& vec); 
+    friend GVec operator/(const GVec& vec, const double& d);
     
 private:
     double m_x;
     double m_y;
+    double m_z;
+    bool m_is3D;
 };
 //===============================================
 #endif

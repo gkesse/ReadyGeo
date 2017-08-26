@@ -1,19 +1,27 @@
 //===============================================
-#include "GVec2D.h"
+#include "GVec.h"
 //===============================================
-int main(int argc, char** argv) {
-    cout << "-------------------------------------------------\n";
-    GVec2D m_vec1(3, 4);
+void length1() {
+    GVec m_vec1(3, 4);
     double m_length1 = m_vec1.length();
     
     cout << "m_vec1 : " << m_vec1 << "\n";
     cout << "m_length1 : " << m_length1 << "\n";
-    cout << "-------------------------------------------------\n";
-    GVec2D m_vec2(-3, -4);
-    double m_length2 = m_vec2.length();
+}
+//===============================================
+void length2() {
+    GVec m_vec1(3, 4, 5);
+    double m_length1 = m_vec1.length();
     
-    cout << "m_vec2 : " << m_vec2 << "\n";
-    cout << "m_length2 : " << m_length2 << "\n";
+    cout << "m_vec1 : " << m_vec1 << "\n";
+    cout << "m_length1 : " << m_length1 << "\n";
+}
+//===============================================
+int main(int argc, char** argv) {
+    cout << "-------------------------------------------------\n";
+    length1();
+    cout << "-------------------------------------------------\n";
+    length2();
     cout << "-------------------------------------------------\n";
     return 0;
 }
