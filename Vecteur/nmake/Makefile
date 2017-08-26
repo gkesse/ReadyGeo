@@ -1,10 +1,11 @@
+GPATH = ../..
 GSRC = ../src
 GBIN = bin
 GBUILD = build
 GTARGET = $(GBIN)/GProject.exe
 
 GINCS =\
-    /I$(GSRC)/manager
+    /I$(GPATH)/lib
     
 GOBJS =\
     $(GBUILD)/main.obj \
@@ -14,7 +15,7 @@ all: $(GOBJS)
 	link /OUT:$(GTARGET) $(GOBJS)
 $(GBUILD)/main.obj: $(GSRC)/main.cpp
 	cl /c /EHsc $(GSRC)/main.cpp /Fo$(GBUILD)/main.obj $(GINCS)
-$(GBUILD)/GVec.obj: $(GSRC)/manager/GVec.cpp
-	cl /c /EHsc $(GSRC)/manager/GVec.cpp /Fo$(GBUILD)/GVec.obj
+$(GBUILD)/GVec.obj: $(GPATH)/lib/GVec.cpp
+	cl /c /EHsc $(GPATH)/lib/GVec.cpp /Fo$(GBUILD)/GVec.obj
 clean:
 	del /Q $(GBUILD)\* $(GBIN)\*
