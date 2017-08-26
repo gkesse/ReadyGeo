@@ -25,6 +25,7 @@ public:
 public:
     double length() const;
     GVec normalize() const;
+    double dot(const GVec& vec) const;
     
 public:
     friend ostream& operator<<(ostream& s, const GVec& vec); 

@@ -67,6 +67,14 @@ GVec GVec::normalize() const {
     return m_vec;
 }
 //===============================================
+double GVec::dot(const GVec& vec) const {
+    double m_data = 0;
+    m_data += m_x*vec.m_x;
+    m_data += m_y*vec.m_y;
+    m_data += m_z*vec.m_z;
+    return m_data;
+}
+//===============================================
 ostream& operator<<(ostream& s, const GVec& vec) {
     s << "(" << vec.m_x << " ; " << vec.m_y;
     if(vec.m_is3D == true) s << " ; " << vec.m_z;
