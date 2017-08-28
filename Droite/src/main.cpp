@@ -4,7 +4,7 @@
 void line1() {    
     GLine m_line1;
     GLine m_line2(3, 4, 5);
-    GLine m_line3 = m_line2;;
+    GLine m_line3 = m_line2;
     GLine m_line4(-3, 1, 1, -2);
     GPoint m_pt1(-3, 1);
     GPoint m_pt2(1, -2);
