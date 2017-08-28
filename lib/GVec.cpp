@@ -61,7 +61,7 @@ bool GVec::isNull() const {
     bool m_null = true;
     m_null &= (m_x == 0);
     m_null &= (m_y == 0);
-    m_null &= (m_y == 0);
+    m_null &= (m_z == 0);
     return m_null;
 }
 //===============================================

@@ -73,6 +73,11 @@ bool GLine::collinear(const GLine& line) const {
     return m_col;
 }
 //===============================================
+bool GLine::orthogonal(const GLine& line) const {
+    bool m_col = (director().dot(line.director()) == 0);
+    return m_col;
+}
+//===============================================
 ostream& operator<<(ostream& s, const GLine& line) {
     s << "(" << line.m_a << " ; ";
     s << line.m_b << " ; ";
