@@ -14,12 +14,12 @@ public:
     ~GLine();
 
 public:
-    double getX() const;
-    double getY() const;
-    double getZ() const;
-    void setX(const double& x);
-    void setY(const double& y);
-    void setZ(const double& z);
+    double getA() const;
+    double getB() const;
+    double getC() const;
+    void setA(const double& a);
+    void setB(const double& b);
+    void setC(const double& c);
 
 private:
     double m_a;

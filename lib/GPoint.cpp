@@ -86,8 +86,11 @@ GPoint operator+(const GPoint& pt, const GVec& vec) {
     return m_pt;
 }
 //===============================================
-GPoint operator+(const GVec& vec, const GPoint& pt) {
-    GPoint m_pt = pt + vec;
+GPoint operator-(const GPoint& pt, const GVec& vec) {
+    GPoint m_pt(pt.m_is3D);
+    m_pt.setX(pt.m_x - vec.getX());
+    m_pt.setY(pt.m_y - vec.getY());
+    m_pt.setZ(pt.m_z - vec.getZ());
     return m_pt;
 }
 //===============================================

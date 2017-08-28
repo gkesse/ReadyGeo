@@ -28,7 +28,7 @@ public:
 public:
     friend ostream& operator<<(ostream& s, const GPoint& pt); 
     friend GPoint operator+(const GPoint& pt, const GVec& vec); 
-    friend GPoint operator+(const GVec& vec, const GPoint& pt); 
+    friend GPoint operator-(const GPoint& pt, const GVec& vec); 
     
 private:
     double m_x;
