@@ -5,7 +5,7 @@
 #include "GVec.h"
 //===============================================
 namespace GGeo {
-double dot(const GVec& vec1, GVec& vec2);
+
 }
 //===============================================
 #endif

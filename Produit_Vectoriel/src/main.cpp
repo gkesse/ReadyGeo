@@ -1,31 +1,31 @@
 //===============================================
 #include "GGlobal.h"
 //===============================================
-void dotProduct1() {    
+void crossProduct1() {    
     GVec m_vec1(3, 4, 5);
     GVec m_vec2(6, 7, 9);
-    double m_dot = m_vec1.dot(m_vec2);
+    GVec m_cross = m_vec1.cross(m_vec2);
     
     cout << "m_vec1 : " << m_vec1 << "\n";
     cout << "m_vec2 : " << m_vec2 << "\n";
-    cout << "m_dot : V1.V2 : " << m_dot << "\n";
+    cout << "m_cross : V1^V2 : " << m_cross << "\n";
 }
 //===============================================
-void dotProduct2() {    
+void crossProduct2() {    
     GVec m_vec1(3, 4, 5);
     GVec m_vec2(6, 7, 9);
-    double m_dot = m_vec2.dot(m_vec1);
+    GVec m_cross = m_vec2.cross(m_vec1);
     
     cout << "m_vec1 : " << m_vec1 << "\n";
     cout << "m_vec2 : " << m_vec2 << "\n";
-    cout << "m_dot : V2.V1 : " << m_dot << "\n";
+    cout << "m_cross : V2^V1 : " << m_cross << "\n";
 }
 //===============================================
 int main(int argc, char** argv) {
     cout << "-------------------------------------------------\n";
-    dotProduct1();
+    crossProduct1();
     cout << "-------------------------------------------------\n";
-    dotProduct2();
+    crossProduct2();
     cout << "-------------------------------------------------\n";
     return 0;
 }

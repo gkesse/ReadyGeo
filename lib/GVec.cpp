@@ -75,6 +75,14 @@ double GVec::dot(const GVec& vec) const {
     return m_data;
 }
 //===============================================
+GVec GVec::cross(const GVec& vec) const {
+    GVec m_vec(true);
+    m_vec.m_x = m_y*vec.m_z - m_z*vec.m_y;
+    m_vec.m_y = m_z*vec.m_x - m_x*vec.m_z;
+    m_vec.m_z = m_x*vec.m_y - m_y*vec.m_x;
+    return m_vec;
+}
+//===============================================
 ostream& operator<<(ostream& s, const GVec& vec) {
     s << "(" << vec.m_x << " ; " << vec.m_y;
     if(vec.m_is3D == true) s << " ; " << vec.m_z;
