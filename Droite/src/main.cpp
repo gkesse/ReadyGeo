@@ -1,31 +1,25 @@
 //===============================================
-#include "GGlobal.h"
+#include "GLine.h"
 //===============================================
-void dotProduct1() {    
-    GVec m_vec1(3, 4, 5);
-    GVec m_vec2(6, 7, 9);
-    double m_dot = m_vec1.dot(m_vec2);
+void line1() {    
+    GLine m_line1;
+    GLine m_line2(3, 4, 5);
+    GLine m_line3 = m_line2;;
+    GLine m_line4(-3, 1, 1, -2);
+    GPoint m_pt1(-3, 1);
+    GPoint m_pt2(1, -2);
+    GLine m_line5(m_pt1, m_pt2);   
     
-    cout << "m_vec1 : " << m_vec1 << "\n";
-    cout << "m_vec2 : " << m_vec2 << "\n";
-    cout << "m_dot : V1.V2 : " << m_dot << "\n";
-}
-//===============================================
-void dotProduct2() {    
-    GVec m_vec1(3, 4, 5);
-    GVec m_vec2(6, 7, 9);
-    double m_dot = m_vec2.dot(m_vec1);
-    
-    cout << "m_vec1 : " << m_vec1 << "\n";
-    cout << "m_vec2 : " << m_vec2 << "\n";
-    cout << "m_dot : V2.V1 : " << m_dot << "\n";
+    cout << "m_line1 : " << m_line1 << "\n";
+    cout << "m_line2 : " << m_line2 << "\n";
+    cout << "m_line3 : " << m_line3 << "\n";
+    cout << "m_line4 : " << m_line4 << "\n";
+    cout << "m_line5 : " << m_line5 << "\n";
 }
 //===============================================
 int main(int argc, char** argv) {
     cout << "-------------------------------------------------\n";
-    dotProduct1();
-    cout << "-------------------------------------------------\n";
-    dotProduct2();
+    line1();
     cout << "-------------------------------------------------\n";
     return 0;
 }

@@ -57,6 +57,14 @@ void GVec::setZ(const double& z) {
     m_z = z;
 }
 //===============================================
+bool GVec::isNull() const {
+    bool m_null = true;
+    m_null &= (m_x == 0);
+    m_null &= (m_y == 0);
+    m_null &= (m_y == 0);
+    return m_null;
+}
+//===============================================
 double GVec::length() const {
     double m_length = sqrt(m_x*m_x + m_y*m_y + m_z*m_z);
     return m_length;

@@ -23,6 +23,7 @@ public:
     void setZ(const double& z);
 
 public:
+    bool isNull() const;
     double length() const;
     GVec normalize() const;
     double dot(const GVec& vec) const;
