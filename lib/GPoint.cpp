@@ -54,16 +54,20 @@ void GPoint::setY(const double& y) {
 }
 //===============================================
 void GPoint::setZ(const double& z) {
-    m_y = z;
+    m_z = z;
 }
 //===============================================
 double GPoint::dist(const GPoint& pt) const {
-    double m_dist;
+    GVec m_vec = this->vec(pt);
+    double m_dist = m_vec.length();
     return m_dist;
 }
 //===============================================
 GVec GPoint::vec(const GPoint& pt) const {
-    GVec m_vec;
+    GVec m_vec(pt.m_is3D);
+    m_vec.setX(pt.m_x - m_x);
+    m_vec.setY(pt.m_y - m_y);
+    m_vec.setZ(pt.m_z - m_z);
     return m_vec;
 }
 //===============================================
@@ -72,5 +76,18 @@ ostream& operator<<(ostream& s, const GPoint& pt) {
     if(pt.m_is3D == true) s << " ; " << pt.m_z;
     s << ")";
     return s;
+}
+//===============================================
+GPoint operator+(const GPoint& pt, const GVec& vec) {
+    GPoint m_pt(pt.m_is3D);
+    m_pt.setX(pt.m_x + vec.getX());
+    m_pt.setY(pt.m_y + vec.getY());
+    m_pt.setZ(pt.m_z + vec.getZ());
+    return m_pt;
+}
+//===============================================
+GPoint operator+(const GVec& vec, const GPoint& pt) {
+    GPoint m_pt = pt + vec;
+    return m_pt;
 }
 //===============================================

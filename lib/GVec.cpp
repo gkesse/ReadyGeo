@@ -54,7 +54,7 @@ void GVec::setY(const double& y) {
 }
 //===============================================
 void GVec::setZ(const double& z) {
-    m_y = z;
+    m_z = z;
 }
 //===============================================
 double GVec::length() const {
