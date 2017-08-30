@@ -29,7 +29,16 @@ void GSmartRef::reset(const int& ref) {
     m_ref = ref;
 }
 //===============================================
-ostream& operator<<(ostream& s, const GSmartRef<T>& sRef) {
+void GSmartRef::add() {
+    m_ref++;
+}
+//===============================================
+int GSmartRef::release() {
+    m_ref--;
+    return m_ref;
+}
+//===============================================
+ostream& operator<<(ostream& s, const GSmartRef& sRef) {
     s << sRef.m_ref;
     return s;
 }
