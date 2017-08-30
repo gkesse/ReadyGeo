@@ -24,6 +24,7 @@ public:
 public:
     double dist(const GPoint& pt) const;
     GVec vec(const GPoint& pt) const;
+    GPoint rotate(const GVec& vec, const double&) const;
 
 public:
     friend ostream& operator<<(ostream& s, const GPoint& pt); 
