@@ -22,13 +22,21 @@ void smartPointer1() {
     
     {
         GSmartPtr<int> m_aPtr1 = m_sPtr1;
-        GSmartPtr<int> m_aPtr2;
-        
-        m_aPtr2 = m_sPtr2;
-    
+        GSmartPtr<int> m_aPtr2 = m_sPtr2;
+            
         cout << "\n";
         cout << "m_aPtr1 : " << m_aPtr1 << "\n";
         cout << "m_aPtr2 : " << m_aPtr2 << "\n";    
+        
+        GSmartPtr<int> m_bPtr1;
+        GSmartPtr<int> m_bPtr2;
+        
+        m_bPtr1 = m_aPtr1;
+        m_bPtr2 = m_aPtr2;
+    
+        cout << "\n";
+        cout << "m_bPtr1 : " << m_bPtr1 << "\n";
+        cout << "m_bPtr2 : " << m_bPtr2 << "\n";    
     }
     
     cout << "\n";
