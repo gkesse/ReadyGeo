@@ -6,15 +6,19 @@ void matrix1() {
     
     GMat A(3, 1, m_data1);
     GMat B(1, 3, m_data1);
-    GMat C = A*B;
-    GMat D(3, 3, m_data1);
-    GMat E = C + D;
+    GMat C(3, 3, m_data1);
+    GMat m_mul = A*B;
+    GMat m_add = m_mul + C;
+    GMat m_sub = m_mul - m_add;
+    GMat m_scale = 5*C;
         
     cout << "A \n" << A << "\n";
     cout << "B \n" << B << "\n";
-    cout << "Mul \n" << C << "\n";
-    cout << "D \n" << D << "\n";
-    cout << "Add \n" << E << "\n";
+    cout << "C \n" << C << "\n";
+    cout << "m_mul \n" << m_mul << "\n";
+    cout << "m_add \n" << m_add << "\n";
+    cout << "m_sub \n" << m_sub << "\n";
+    cout << "m_scale \n" << m_scale << "\n";
 }
 //===============================================
 int main(int argc, char** argv) {
