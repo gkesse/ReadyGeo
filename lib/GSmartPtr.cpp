@@ -26,7 +26,6 @@ template<class T>
 GSmartPtr<T>::~GSmartPtr() {
     if(m_ptr == 0) return;
     if(m_sRef->release() > 0) return;
-    cout << "GSmartPtr Destructor...\n";
     delete m_ptr;
     delete m_sRef;
     m_ptr = 0;

@@ -13,7 +13,9 @@ public:
     static GMatPass* Instance();
 
 public:
-
+    void show() const;
+    void identity();
+    
 private:
     static GMatPass* m_instance;
     GMat* m_mat;

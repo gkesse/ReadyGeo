@@ -1,77 +1,34 @@
 //===============================================
 #include "GMatPass.h"
 //===============================================
+GMatPass* GMatPass::m_instance = 0;
+//===============================================
 GMatPass::GMatPass() {
-    m_mat = 
+    m_mat = new GMat(4,4);
 }
 //===============================================
-GMat::GMat(const GMat& mat) {
-    m_row = mat.m_row;
-    m_col = mat.m_col;
-    m_mat = new double[mat.size()];
-    
-    for(int i = 0; i < mat.size(); i++) {
-        m_mat[i] = mat[i];
+GMatPass::~GMatPass() {
+
+}
+//===============================================
+GMatPass* GMatPass::Instance() {
+    if(m_instance == 0) {
+        m_instance = new GMatPass;
     }
+    return m_instance;
 }
 //===============================================
-GMat::GMat(const int& row, const int& col) {
-    m_row = row;
-    m_col = col;
-    m_mat = new double[size()];
-    
-    for(int i = 0; i < size(); i++) {
-        m_mat[i] = 0;
-    }
+void GMatPass::show() const {
+    cout << *m_mat << "\n";
 }
 //===============================================
-GMat::GMat(const int& row, const int& col, const double& data) {
-    m_row = row;
-    m_col = col;
-    m_mat = new double[size()];
-    
-    for(int i = 0; i < size(); i++) {
-        m_mat[i] = data;
-    }
-}
-//===============================================
-GMat::GMat(const int& row, const int& col, double* data) {
-    m_row = row;
-    m_col = col;
-    m_mat = new double[size()];
-    
-    for(int i = 0; i < size(); i++) {
-        m_mat[i] = data[i];
-    }
-}
-//===============================================
-GMat::~GMat() {
-    if(m_mat == 0) return;
-    delete m_mat;
-    m_mat = 0;
-}
-//===============================================
-int GMat::size() const {
-    int m_size = m_row*m_col;
-    return m_size;
-}
-//===============================================
-double& GMat::operator[](const int& i) const {
-    return m_mat[i];
-}
-//===============================================
-ostream& operator<<(ostream& s, const GMat& mat) {
-    if(mat.m_mat == 0) return s;
-    int k = 0;
-    
-    for(int i = 0; i < mat.m_row; i++) {
-        for(int j = 0; j < mat.m_col; j++) {
-            if(j != 0) s << " ; ";
-            s << setw(3) << mat[k++];
+void GMatPass::identity() {
+    for(int i = 0; i < m_mat->getRow(); i++) {
+        for(int j = 0; j < m_mat->getCol(); j++) {
+            int k = i*m_mat->getCol() + j; 
+            if(i == j) (*m_mat)[k] = 1;
+            else (*m_mat)[k] = 0;
         }
-        s << "\n";
     }
-        
-    return s;
 }
 //===============================================

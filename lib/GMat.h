@@ -4,6 +4,7 @@
 //===============================================
 #include <iostream>
 #include <iomanip>
+#include <assert.h>
 //===============================================
 using namespace std;
 //===============================================
@@ -17,8 +18,8 @@ public:
     ~GMat();
 
 public:
-    double getRow() const;
-    double getCol() const;
+    int getRow() const;
+    int getCol() const;
     void setRow(const int& row);
     void setCol(const int& col);
 
@@ -27,7 +28,13 @@ public:
     int size() const;
     
 public:
+    GMat& operator=(const GMat& mat); 
     double& operator[](const int& i) const; 
+    friend GMat operator+(const GMat& mA, const GMat& mB); 
+    friend GMat operator-(const GMat& mA, const GMat& mB); 
+    friend GMat operator*(const GMat& mA, const GMat& mB); 
+    friend GMat operator*(const GMat& mA, const double& k); 
+    friend GMat operator*(const double& k, const GMat& mA); 
     friend ostream& operator<<(ostream& s, const GMat& mat); 
     
 private:
