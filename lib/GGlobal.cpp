@@ -1,13 +1,13 @@
 //===============================================
-#include "GMat.h"
+#include "GGlobal.h"
 //===============================================
-GMat::GMat() {
+GGlobal::GGlobal() {
     m_mat = 0;
     m_row = 0;
     m_col = 0;
 }
 //===============================================
-GMat::GMat(const GMat& mat) {
+GGlobal::GGlobal(const GGlobal& mat) {
     m_row = mat.m_row;
     m_col = mat.m_col;
     m_mat = new double[mat.size()];
@@ -17,7 +17,7 @@ GMat::GMat(const GMat& mat) {
     }
 }
 //===============================================
-GMat::GMat(const int& row, const int& col) {
+GGlobal::GGlobal(const int& row, const int& col) {
     m_row = row;
     m_col = col;
     m_mat = new double[size()];
@@ -27,7 +27,7 @@ GMat::GMat(const int& row, const int& col) {
     }
 }
 //===============================================
-GMat::GMat(const int& row, const int& col, const double& data) {
+GGlobal::GGlobal(const int& row, const int& col, const double& data) {
     m_row = row;
     m_col = col;
     m_mat = new double[size()];
@@ -37,7 +37,7 @@ GMat::GMat(const int& row, const int& col, const double& data) {
     }
 }
 //===============================================
-GMat::GMat(const int& row, const int& col, double* data) {
+GGlobal::GGlobal(const int& row, const int& col, double* data) {
     m_row = row;
     m_col = col;
     m_mat = new double[size()];
@@ -47,22 +47,22 @@ GMat::GMat(const int& row, const int& col, double* data) {
     }
 }
 //===============================================
-GMat::~GMat() {
+GGlobal::~GGlobal() {
     if(m_mat == 0) return;
     delete m_mat;
     m_mat = 0;
 }
 //===============================================
-int GMat::size() const {
+int GGlobal::size() const {
     int m_size = m_row*m_col;
     return m_size;
 }
 //===============================================
-double& GMat::operator[](const int& i) const {
+double& GGlobal::operator[](const int& i) const {
     return m_mat[i];
 }
 //===============================================
-ostream& operator<<(ostream& s, const GMat& mat) {
+ostream& operator<<(ostream& s, const GGlobal& mat) {
     if(mat.m_mat == 0) return s;
     int k = 0;
     

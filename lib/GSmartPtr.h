@@ -39,7 +39,7 @@ public:
     //===============================================
     friend ostream& operator<<(ostream& s, const GSmartPtr<T>& sPtr) {
         if(sPtr.m_ptr == 0) return s;
-        s << *(sPtr.m_ptr) << " : Ref : " << *(sPtr.m_sRef);
+        s << *(sPtr.m_ptr);
         return s;
     }
     //===============================================

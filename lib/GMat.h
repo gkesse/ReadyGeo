@@ -3,6 +3,7 @@
 #define _GMat_
 //===============================================
 #include <iostream>
+#include <iomanip>
 //===============================================
 using namespace std;
 //===============================================
@@ -11,6 +12,8 @@ public:
     GMat();
     GMat(const GMat& mat);
     GMat(const int& row, const int& col);
+    GMat(const int& row, const int& col, const double& data);
+    GMat(const int& row, const int& col, double* data);
     ~GMat();
 
 public:
@@ -21,10 +24,11 @@ public:
 
 public:
     bool isNull() const;
+    int size() const;
     
 public:
-    friend ostream& operator<<(ostream& s, const GMat& vec); 
-    friend GMat operator/(const GMat& vec, const double& d);
+    double& operator[](const int& i) const; 
+    friend ostream& operator<<(ostream& s, const GMat& mat); 
     
 private:
     double* m_mat;

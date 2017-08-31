@@ -9,18 +9,12 @@ GINCS =\
     
 GOBJS =\
     $(GBUILD)/main.obj \
-    $(GBUILD)/GVec.obj \
-    $(GBUILD)/GPoint.obj \
     $(GBUILD)/GMat.obj
     
 all: $(GOBJS)
 	link /OUT:$(GTARGET) $(GOBJS)
 $(GBUILD)/main.obj: $(GSRC)/main.cpp
 	cl /c /EHsc $(GSRC)/main.cpp /Fo$(GBUILD)/main.obj $(GINCS)
-$(GBUILD)/GVec.obj: $(GPATH)/lib/GVec.cpp
-	cl /c /EHsc $(GPATH)/lib/GVec.cpp /Fo$(GBUILD)/GVec.obj 
-$(GBUILD)/GPoint.obj: $(GPATH)/lib/GPoint.cpp
-	cl /c /EHsc $(GPATH)/lib/GPoint.cpp /Fo$(GBUILD)/GPoint.obj 
 $(GBUILD)/GMat.obj: $(GPATH)/lib/GMat.cpp
 	cl /c /EHsc $(GPATH)/lib/GMat.cpp /Fo$(GBUILD)/GMat.obj 
 clean:
